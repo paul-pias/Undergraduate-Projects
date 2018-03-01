@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+ 
+<html>
+ 
+<head><title> SDS for ForRent.com </title></head>
+ 
+<body>
+ 
+<style>
+
+body {background-color: bisque;}
+ 
+h1 {text-align:center;}
+ 
+table {
+	font-family: verdana , arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+ 
+ #first{background-color: inherit; text-align:justify;}
+ 
+td, th {
+	border: 1px solid black; 
+	text-align: left;
+	padding: 8px;
+}
+ 
+tr:nth-child(odd) {
+	background-color: #dddddd;
+}
+ 
+</style> 
+ 
+<h1>Sofware Design Specification</h1>
+ 
+<h2 style = "text-align:center;"> for </h2>
+ 
+<h1> ForRent.com </h1>
+
+<br><h2> Prepared by: </h2>
+<h3><p> Kazi Muntashir Muzib (ID# 141 0464 042)</p></h3>
+<h3><p> Md. Samiul Kabir (ID# 132 0751 042) </p></h3> 
+<h3><p> Mahmudur Rashid (ID# 151 1966 042) </p></h3>
+<h3><p> Moh. Anwar-ul-Azim Bhuiyan (ID# 141 1181 042) </p></h3>
+<h3><p> Pias Paul (ID# 141 0542 042) </p></h3>
+<h3><p> Md. Fazle Rashed Khan (ID# 132 0237 642) </p></h3>
+</h3><br>
+
+<h2> CSE327.1 </h2>
+<h2> Date Created: October 21, 2017 </h2>
+<br><hr><br>
+ 
+<h1 id="top">Table of Contents</h1>
+<!--Links go here -->
+<ul>
+  <li><a href="#top"> Table of Contents </a></li>
+</ul>
+
+<ol type="1"> 
+ <li><a href="#intro">Introduction</a></li>
+  <ol>
+	<li><a href="#1.1"> Purpose of this document</a></li>
+	<li><a href="#1.2"> Scope of the development project </a></li>
+	<li><a href="#1.3"> Definitions, acronyms, and abbreviations </a></li>
+	<li><a href="#1.4"> References </a></li>
+	<li><a href="#1.5"> Overview of document </a></li>
+  </ol><br>
+ 
+  <li><a href="#2"> Architecture </a></li>
+  <ol>
+	<li><a href="#2.1"> High level system design </a></li>
+  </ol><br>
+
+  <li><a href="#3"> Component Design Specification </a></li><br>
+  <ol>
+	<li><a href="#3.1"> Use Case Diagram</a></li>
+	<li><a href="#3.2"> Expanded Use Cases </a></li>
+	<li><a href="#3.3"> Simplified ER Diagram </a></li>
+	<li><a href="#3.4"> Complete ER Diagram </a></li>
+  </ol><br>
+  <li><a href="#4"> User interface Issues </a></li><br>
+ 
+  <li><a href="#5"> Execution Architecture </a></li><br>
+
+  <li><a href="#6"> Design Decisions and Tradeoffs </a></li>
+</ol>
+<br><hr><br>
+
+<h1 id="intro"> 1. Introduction </h1><br>
+<p>ForRent.com is a database for apartments/rooms available for rent in different areas of the city. It is the only solution of its kind available in Bangladesh that allows users to look for apartments as well as rooms that bachelors can share. ForRent.com allows users to put their flats for rent and as well as to search for the perfect place to live. Here the User or owner of apartments as well as the manager of a bachelor apartment can give their apartment or room details, so that people who are in search of a place to live can check if that apartment or room is suitable for them. The website is open for all to register free of cost and registered users can edit or even delete their apartment information whenever they want by logging into their accounts. ForRent.com makes conventional house renting procedures simple and seamless.</p>
+ 
+<h2 div id="1.1"> 1.1 Purpose of this Document </h2>
+ 
+<p>This SDS document is intended to cover the technical aspects of the development of ForRent.com.</p>
+ 
+<h2 id="1.2"> 1.2 Scope of the development project </h2>
+
+<p>Users looking for a place to live can filter their search results by location, budget, number of bedrooms, size of the apartment, amount of rent etc. Users can also compare multiple apartments to find the one best suited for them. There is also an option to add apartments to their Favorite List so that they can check out that apartment later whenever they want. They can get the apartment address and the owner’s contact information so that they can check the apartments. User can also view the location of the house in map view. </p>
+ 
+<h2 id="1.3"> 1.3 Definitions, Acronyms and Abbreviations </h2>
+ 
+<ul>
+	<li> MVC - Model View Controller</li>
+</ul>
+
+<h2 id="1.4"> 1.4 References </h2> 
+	<p>[1] About MariaDB. (n.d.). Retrieved October 24, 2017, from https://mariadb.org/about/</p>
+ 
+<h2 id="1.5"> 1.5 Overview of the Document </h2>
+<p>Section 2 contains the Conceptual Level Class Diagram, which shows structure, dependencies and interactions between components.</p>
+<p>Section 3 contains the UML use case diagram and the expanded use cases. The ER diagrams of the proposed database design is also given.</p>
+<p>Section 4 contains some sample screenshots of the User Interface along with some feature details. </p>
+<p>Section 5 contains details of the execution architecture.</p>
+<p>Section 6 lists the decisions we had to make when designing our system and why we made the choices we did.</p>
+<br><hr><br>
+
+<h1 id="2"> 2. Architechture </h1><br>
+ <h2 id="2.1"> 2.1 High level system design </h2><br>
+  <center><img src="Class Diagram.jpg" alt="Conceptual Level CLass Diagram" style="width:660px; height:460px";></center>
+<br><hr><br>
+
+<h1 id="3"> 3. Component Design Specifications </h1>
+<h2 id="3.1"> 3.1 Use Case Diagram </h2>
+ <center><img src="Use Case Diagram.jpg" alt="Use Case Diagram" style="width:660px; height:560px";></center>
+<br><hr><br>
+
+<h2 id="3.2"> 3.2 Expanded Use Cases </h2>
+
+<p><u><b>First Case</b></u></p>
+<blockquote>
+<p> Use case name: Add Apartment</p>
+<p>	Actor: Registered User</p>
+<p>	Type: Primary</p>
+<p>	Typical course of events:</p>
+
+<table>
+	<tbody><tr>
+		<th style="text-align:center";>Actor Actions</th>
+		<th style="text-align:center";>System Responses</th>
+	</tr>
+	<tr>
+		<td>1) Go to "ForRent.com"<br>
+			3) Click on "Sign In" button on the Navbar.<br>
+			5) Enter credentials. Click "Log In" button.<br>
+			7) Click on "Add Listing" button on the Navbar.<br>
+			9) Click on the "Add Apartment" button.<br>
+			11) Enter apartment details. Click on "Submit" button.
+		</td>
+		<td>2) Serve home page.<br>
+		4) Serve Sign In Page.<br>
+		6) Verify credentials. Serve home page with user logged in.<br>
+		8) Serve "Add Listing" page. <br>
+		10) Serve "Add Apartment" page. <br>
+		12) Post listing to database. Show success confirmation.
+		</td>
+	</tr>
+	</tbody></table>
+<p>Exceptions:<br></p>
+<DL>
+  <DD> 4.1) If credentials are wrong, print a message in red saying that username/password is incorrect.<br></DD>
+  <DD> 11.1) If address is left blank, highlight textbox and print message saying that the information is required.</DD>
+</DL>
+</blockquote>
+<br><hr><br>
+
+<p><u><b>Second Case</b></u></p>
+<blockquote>
+<p>Use case name: Add Room</p>
+<p>Actor: Registered User</p>
+<p>Type: Primary</p>
+<p>Typical course of events:</p>
+
+<table>
+  <tbody><tr>
+    <th style="text-align:center";>Actor Actions</th>
+    <th style="text-align:center";>System Responses</th>
+	  </tr>
+	  <tr>
+	    <td>1) Go to "ForRent.com"<br>
+			3) Click on "Sign In" button on the Navbar.<br>
+			5) Enter credentials. Click "Log In" button.<br>
+			7) Click on "Add Listing" button on the Navbar.<br>
+			9) Click on the "Add Room" button.<br>
+			11) Enter apartment details. Click on "Submit" button.
+		</td>
+	    <td>2) Serve home page.<br>
+			4) Serve Sign In Page.<br>
+			6) Verify credentials. Serve home page with user logged in.<br>
+			8) Serve "Add Listing" page. <br>
+			10) Serve "Add Room" page. <br>
+			12) Post listing to database. Show success confirmation.
+		</td>
+	  </tr>
+  </tbody></table>
+				
+<p>Exceptions:<br></p>
+<DL>
+  <DD> 4.1) If credentials are wrong, print a message in red saying that username/password is incorrect.<br></DD>
+  <DD> 11.1) If address is left blank, highlight textbox and print message saying that the information is required.</DD>
+</DL>
+</blockquote>
+<br><hr><br>
+
+<p><u><b>Third Case</b></u></p>
+<blockquote>
+<p>Use case name: View Profile</p>
+<p>Actor: Registered User</p>
+<p>Type: Primary</p>
+<p>Typical course of events:</p>
+	
+<table>
+ <tbody><tr>
+    <th style="text-align:center";>Actor Actions</th>
+    <th style="text-align:center";>System Responses</th>
+  </tr>
+  <tr>
+    <td>1) Go to "ForRent.com"<br>
+		3) Click on "Sign In" button on the Navbar.<br>
+		5) Enter credentials. Click "Log In" button.<br>
+		7) Click on Username button on the Navbar.
+	</td>
+	<td>2) Serve home page.<br>
+		4) Serve Sign In Page.<br>
+		6) Verify credentials. Serve home page with user logged in.<br>
+		8) Serve "User Profile" page.
+	</td>
+  </tr>
+ </tbody></table>
+<p>Exceptions:<br></p>
+<DL>
+  <DD> 4.1) If credentials are wrong, print a message in red saying that username/password is incorrect.</DD>
+</blockquote>
+<br><hr><br>
+
+<p><u><b>Fourth Case</b></u></p>
+<blockquote>
+<p>Use case name: View Listings</p>
+<p>Actor: Unregistered Users, Registered User </p>
+<p>Type: Primary</p>
+<p>Typical course of events:</p>
+
+<table>
+  <tbody><tr>
+    <th style="text-align:center";>Actor Actions</th>
+    <th style="text-align:center";>System Responses</th>
+  </tr>
+  <tr>
+    <td>1) Go to "ForRent.com"<br>
+		3) Click on a field in the Search Widget and type a value. <br>
+		4) Click on the "Search" button.<br>
+		7) Click on "View Details" button on any of the listings in the page.
+	</td>
+    <td>2) Serve home page.<br>
+		5) Refresh page with listings from database via appropriate queries using data from the Search Widget.<br>
+		8) Serve Details page of the selected listing.
+	</td>
+   </tr>
+  </tbody></table>
+<p>Exceptions:</b></p>
+<DL>
+  <DD> 6.1) If no listings in the database match the criteria of the user, display a message saying that such listings are not available.</DD>
+</DL>
+</blockquote>
+<br><hr><br>
+
+<h2 id="3.3"> 3.3 Simplified ER Diagram</h2>
+<figure>
+ <center><img src="simplifiedER.png" alt="Simplified ER Diagram" style="width:960px;height:480px;"></center>
+ <center><figcaption>Simplified ER Diagram showing relationship between tables in the proposed database</figcaption>
+</figure>
+<br><hr><br>
+
+<h2 id="3.4"> 3.4 Complete ER Diagram</h2>
+<figure>
+ <center><img src="completeER.png" alt="Complete ER Diagram" style="width:1120px;height:630px;"></center>
+ <center><figcaption>Complete ER Diagram</figcaption>
+</figure>
+<br><hr><br>
+
+<h1 id="4"> 4. User Interface Issues </h1>
+<h4>The Home Page will feature the listings from the Database and the Search Widget. Users can use the Search Widget to classify their location, budget, type of listing, number of bedrooms, etc. </h4>
+<figure>
+ <center><img src="Picture1.png" alt="Home Page" style="width:1012px; height:480px";></center>
+ <center><figcaption>Home Page</figcaption>
+</figure>
+
+<h4>Users will have the option to sign up using Facebook or Google in addition to the conventional form.</h4>
+<figure>
+ <center><img src="Picture2.png" alt="Sign Up Page" style="width:1012px; height:480px";></center>
+ <center><figcaption>Sign Up Page</figcaption>
+</figure>
+
+<h4>The View Details page will show users all the facilities available. Users will also be able to view the exact location on the map. Web Users will get recommendations of similar listings if they allow cookies. App users will get recommendations according to their search data preferences.</h4>
+<figure>
+ <center><img src="Picture3.png" alt="View Details Page" style="width:1000px; height:525px";></center>
+ <center><img src="Picture4.png" alt="View Details Page" style="width:1000px; height:525px";></center>
+ <center><figcaption>View Details Page</figcaption>
+</figure>
+
+<br><hr><br>
+
+<h1 id="5"> 5. Execution Architechture </h1>
+<p>The front-end of ForRent.com will be made using jQuery and a bootstrap template of a typical e-commerce site and a database will be made in phpmyadmin, which is a web-based tool for administering MariaDB and MySQL. "MariaDB is one of the most popular Open Source relational databases. We intend to use MariaDB because it is fast, scalable and robust, with a rich ecosystem of storage engines, plugins and many other tools which make it very versatile for a wide variety of use cases."[1]</p>
+<p>The front-end and the back-end will then be connected using the CodeIgniter framework, which utilizes the MVC pattern. It helps to connect the front-end and back-end of a website or web application by organising the codes into three interconnected parts. The database is managed in the Model section, the front-end code is managed by the View section and finally the php code that connects the database to the front-end is managed by the Controller section.The resulting application will then hosted be on a server. Initial testing will be done by hosting on a XAMPP Local Server.</p>
+<p>We will also try to utilize the real-time database of Firebase. This can aid in the development of the Android app.</p>
+<br><hr><br>
+
+<h1 id="6"> 6. Design Decisions & Tradeoffs </h1>
+<p>Registered users will have the option to add either Apartments or Rooms in the "Add Listings" page. We chose not to create two types of users who can either add only Apartments or only Rooms. This is done for overall simplicity, as separating the features for 2 types of users may cause some users to create 2 types of accounts for adding rooms and apartments. Unifying this feature addresses a larger userbase and makes it easier for users to maintain their account. </p>
+
+<figure>
+ <center><img src="Picture5.png" alt="Add Listing Page" style="width:1024px; height:479px";></center>
+ <center><figcaption>Add Listing Page</figcaption>
+</figure>
+
+<br><hr><br>
+
+<h1>Thank You</h1>
+<center><a href="#top">Back to Table of Contents</a></center>
+<br><hr><br> 
+
+</body>
+ 
+</html>

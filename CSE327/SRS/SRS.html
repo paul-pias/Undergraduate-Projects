@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head><title> SRS for ForRent.com </title></head>
+
+<body>
+
+<style>
+body {background-color: beige;}
+h1   {text-align:center;}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(odd) {
+    background-color: #dddddd;
+}
+</style>
+
+<h1> Software Requirements Specification </h1>
+<h2 style = "text-align:center;"> for </h2> 
+<h1> ForRent.com </h1>
+
+<br><h2> Prepared by: </h2>
+<h3><p> Kazi Muntashir Muzib (ID# 141 0464 042)</p></h3>
+<h3><p> Md. Samiul Kabir (ID# 132 0751 042) </p></h3> 
+<h3><p> Mahmudur Rashid (ID# 151 1966 042) </p></h3>
+<h3><p> Moh. Anwar-ul-Azim Bhuiyan (ID# 141 1181 042) </p></h3>
+<h3><p> Pias Paul (ID# 141 0542 042) </p></h3>
+<h3><p> Md. Fazle Rashed Khan (ID# 132 0237 642) </p></h3>
+</h3><br>
+
+<h2> CSE327.1 </h2>
+<h2> Date Created: October 7, 2017 </h2>
+<br><hr><br>
+
+<h1 id="top">Table of Contents</h1>
+<!--Links go here -->
+<ul>
+  <li><a href="#top"> Table of Contents </a></li><br>
+  <li><a href="#revision_history"> Revision History </a></li>
+</ul>
+
+<ol type="1"> 
+ <li><a href="#intro">Introduction</a></li>
+  <ol>
+    <li><a href="#1.1"> Purpose </a></li>
+    <li><a href="#1.2"> Document Conventions </a></li>
+    <li><a href="#1.3"> Intended Audience and Reading Suggestions </a></li>
+    <li><a href="#1.4"> Product Scope </a></li>
+    <li><a href="#1.5"> References </a></li>
+  </ol><br>
+ 
+  <li><a href="#2"> Overall Description </a></li>
+  <ol>
+    <li><a href="#2.1"> Product Perspective </a></li>
+    <li><a href="#2.2"> Product Functions </a></li>
+    <li><a href="#2.3"> User Classes and Characteristics </a></li>
+    <li><a href="#2.4"> Operating Environment </a></li>
+    <li><a href="#2.5"> Design and Implementation Constraints </a></li>
+    <li><a href="#2.6"> User Documentation </a></li>
+    <li><a href="#2.7"> Assumptions and Dependencies </a></li>
+  </ol><br>
+
+  <li><a href="#3"> External Interface Requirements </a></li>
+  <ol>
+    <li><a href="#3.1"> User Interfaces </a></li>
+    <li><a href="#3.2"> Hardware Interfaces </a></li>
+    <li><a href="#3.3"> Software Interfaces </a></li>
+    <li><a href="#3.4"> Communications Interfaces </a></li>
+  </ol><br>
+ 
+  <li><a href="#4"> System Features </a></li><br>
+ 
+  <li><a href="#5"> Other Nonfunctional Requirements </a></li>
+  <ol>
+    <li><a href="#5.1"> Performance Requirements </a></li>
+    <li><a href="#5.2"> Safety Requirements </a></li>
+    <li><a href="#5.3"> Security Requirements </a></li>
+    <li><a href="#5.4"> Software Quality Attributes </a></li>
+    <li><a href="#5.5"> Business Rules </a></li>
+  </ol><br>
+
+</ol>
+ 
+<ul>
+  <li><a href="#appA"> Appendix A: Glossary </a></li><br>
+  <li><a href="#appB"> Appendix B: Analysis Models </a></li><br>
+  <li><a href="#appC"> Appendix C: To Be Determined List </a></li>
+</ul>
+<br><hr><br>
+
+<h1 id="revision_history"> Revision History </h1>
+<!--table goes here -->
+<table>
+  <tr>
+    <th> Name </th>
+    <th> Date </th>
+    <th> Reason For Changes </th>
+    <th> Version </th>
+  </tr>
+  <tr>
+    <td> SRS and concept </td>
+    <td> October 7, 2017 </td>
+    <td> Initial Planning Stage </td>
+    <td> 1 </td>
+  </tr>
+</table>
+<br><hr><br>
+
+<h1 id="intro">1. Introduction </h1><br>
+
+<h2 id="1.1"> 1.1 Purpose </h2>
+<p>ForRent.com is a database for apartments/rooms available for rent in different areas of the city. It is the only solution of its kind available in Bangladesh that allows users to look for apartments as well as rooms that bachelors can share. ForRent.com allows users to put their flats for rent and as well as to search for the perfect place to live. Here the User or owner of apartments as well as the manager of a bachelor apartment can give their apartment or room details, so that people who are in search of a place to live can check if that apartment or room is suitable for them. The website is open for all to register free of cost and registered users can edit or even delete their apartment information whenever they want by logging into their accounts. ForRent.com makes conventional house renting procedures simple and seamless.</p>
+
+<h2 id="1.2"> 1.2 Document Conventions </h2>
+<p>Users from non-technical backgrounds are encouraged to skip to <em>System Features</em> <a href="#4">(Section 4)</a> to get an idea of key features of ForRent.com.</p>
+<p>All readers are requested to read the <em>Nonfunctional Requirements</em> <a href="#4">(Section 5)</a> thoroughly.</p>
+
+<h2 id="1.3"> 1.3 Intended Audience and Reading Suggestions </h2>
+<p>This document is intended for anyone interested in the development and workings of ForRent.com and is written in a way that users from all walks of life can relate to and comprehend. Readers are requested to read the SRS in the given sequence.</p>
+
+<h2 id="1.4"> 1.4 Product Scope </h2>
+<p>Users looking for a place can filter their search results by location, budget, number of bedrooms, size of the apartment, amount of rent etc. Users can also compare multiple apartments to find the one best suited for them. There is also an option to add apartments to their Favorite List so that they can check out that apartment later whenever they want. They can get the apartment address and the owner’s contact information so that they can check the apartments.</p>
+
+<h2 id="1.5"> 1.5 References </h2>
+<p>Jenson, Graham. “List of Recommender Systems.” GitHub, 3 June 2017, github.com/grahamjenson/list_of_recommender_systems</p>
+<br><hr><br>
+
+<h1 id="2"> 2. Overall Description </h1><br>
+
+<h2 id="2.1"> 2.1 Product Perspective </h2>
+<p>As of yet, there is no existing platform that allows people to search for apartments for rent. ForRent.com aims to eliminate the hassle and the tediousness of common house renting procedures.</p>
+
+<h2 id="2.2"> 2.2 Product Functions </h2>
+<p>Users will be able to browse apartments/rooms available for rent that are listed on ForRent.com for free.</p>
+<p>Registered users will be able to add their own listings.</p> 
+<p>The filtered search will allow users to get exactly what they are looking for in their next home.</p>
+
+<h2 id="2.3"> 2.3 User Classes and Characteristics </h2>
+<p>ForRent.com is meant to be used by people who are looking for a new place to live or for people who want to get their empty apartments rented out. It is a platform aimed at connecting apartment owners/managers with potential tenants. Users can also use the site to get an idea of the average rent in a particular area of their interest.</p>
+
+<h2 id="2.4"> 2.4 Operating Environment </h2>
+<p>The latest version of XAMPP will be used to used to test and host ForRent.com locally.</p>
+<p>ForRent.com is to be tested on the latest versions of HTML5-enabled web browsers.</p>
+
+<h2 id="2.5"> 2.5 Design and Implementation Constraints </h2>
+<p><b>Implementaion Constraint:</b> This project will not initally be hosted on any web server. We will use a XAMPP Local Server for simulaton and testing.</p>
+<p></p>
+
+<h2 id="2.6"> 2.6 User Documentation </h2>
+<p>Please refer to the <a href="#4"> System Features </a> section of this SRS to learn more about the various features of ForRent.com and how to use them.</p>
+
+<h2 id="2.7"> 2.7 Assumptions and Dependencies</h2>
+<p>The AI component of the project will be built using one of the recommender sections mentioned in the Github post "List of Recommender Systems" by Graham Jenson.</p>
+<p>Facebook and/or Google API will be used to facilitate user sign up and sign in procedures.</p>
+<br><hr><br>
+
+<h1 id="3"> 3. External Interface Requirements </h1><br>
+
+<h2 id="3.1"> 3.1 User Interfaces </h2>
+<p>ForRent.com is to have a sidebar present in all windows which will be the main controls for the user to navigate the site. The sidebar will contain filtered seach fields for Maximum Rent, Total Area (in Square Feet), Listing Type (Room/Flat), Number of Bedrooms and Location of the apartment.</p>
+<p>Users can sign up or sign in by clicking the links on the persistent navbar on top of the webpage. Users who sign in can also jump to their profiles and see their own listings from there.</p>
+
+<h2 id="3.2"> 3.2 Hardware Interfaces </h2>
+<p>ForRent.com is a website that can be accessible by virtually every web browser. Smoothness of the user interface will vary according to the quality of the internet connection and the download and upload speeds of the device that the website is being accessed with.</p>
+
+<h2 id="3.3"> 3.3 Software Interfaces </h2>
+<p>The front-end of ForRent.com will be made using jQuery and a bootstrap template of a typical e-commerce site and a MySQL database will be made in phpmyadmin. The front-end and the back-end will then be connected using the CodeIgniter framework, which utilizes the MVC pattern. MVC stands for Model-View-Controller. It helps to connect the front-end and back-end of a website or web application by organising the codes into three interconnected parts. The database is managed in the Model section, the front-end code is managed by the View section and finally the php code that connects the database to the front-end is managed by the Controller section. The resulting application will then hosted be on a server. Initial testing will be done by hosting on a XAMPP Local Server.</p>
+
+<h2 id="3.4"> 3.4 Communication Interfaces </h2>
+<p>POST methods will be instead of GET methods to pass data to and from the server as it is more secure. POST does not disclose username and password in the URLs.</p>
+<p>Users can choose to directly sign up and log into ForRent.com, which will then send the data directly to our database or they can choose to sign in with their existing Facebook/Google accounts, which will be facilitated with the respective APIs.</p>
+<br><hr><br>
+
+<h1 id="4"> 4. System Features </h1><br>
+
+<h3>Some key features of ForRent.com are as follows:</h3>
+
+<h2 id="4.1"> 4.1 Add Apartment Details: </h2>
+<p>The owner of the Apartment or the Manager of a Bachelor Apartment can put their apartment/room details in the website. First they will need to sign up with some basic information and then log in. After logging in they can add their apartments by filling the "add apartment" form in the website.</p>
+<h4><b>Requirement 1 (High Priority): Separate forms for "Add Aparment", "Add Room", "User Login" and "User Signup" must be developed that send data to the database.</b></h4>  
+	
+<h2 id="4.2"> 4.2 Availability and Shareability: </h2>
+<p>Users can easily check if the apartments they are looking for are available, or in case of rooms, whether the manager allows multiple people to share a single room.</p>
+<h4><b>Requirement 1 (High Priority): Listings must show the type (Apartment/Room) at first glance to save users' time.</b></h4> 
+		
+<h2 id="4.3"> 4.3 Filtered Search: </h2>
+<p>The user can filter the search results by the place of the apartment, the size of the apartment, number of bedrooms, their budget for rent etc. It will help the user to easily find out the apartments that they are looking for and the ones that they can afford as well.</p>
+<h4><b>Requirement 1 (High Priority): The website must be able to retrieve proper results from the database (via appropriate queries) if multiple search criteria are provided by the user.</b></h4> 
+
+<h2 id="4.4"> 4.4 Insightful User Dashboard: </h2>
+<p>The user dashboard of ForRent.com will show basic contact information of the user as well as their convenient times when interested customers can call them. The user dashboard also feature all the listings of the user.</p>
+<h4><b>Requirement 1 (High Priority): Listings must show the type (Apartment/Room) at first glance to save users' time.</b></h4>
+
+<h2 id="4.5"> 4.5 Apartment/Room Facilities Overview: </h2>
+<p>Users interested in an apartment/room can see whether their chosen entity has a list of facilities like generator, lift, Wi-Fi, etc. in the overview.</p>
+<h4><b>Requirement 1 (High Priority): "Apartment Overview" page must display all fields that the apartment owner/manager inputs accurately for the customer.</b></h4>
+<br><hr><br>
+
+<h1 id="5"> 5. Other Nonfunctional Requirements </h1><br>
+
+<h2 id="5.1"> 5.1 Performance Requirements </h2>
+<p>The website must be fast and fluid while ensuring user friendliness.</p>
+<p>The session of each user must be kept so that multiple users can login and view their own profiles.</p> 
+<p>Cookies need to be saved on the users' devices for the recommender system (AI) to work properly. Users must be prompted for permission to allow Cookies.</p>
+
+<h2 id="5.2"> 5.2 Safety Requirements </h2>
+<p>Apartment owners/managers are requested to do a background check (e.g. by means of a testimonial from previous landlord or parents in case of bachelors) of their tenants before renting their houses when a deal is made via ForRent.com. ForRent.com and the team will not be responsible in case of any unpleasant situations.</p>
+
+<h2 id="5.3"> 5.3 Security Requirements </h2>
+<p>Apartment owners/managers are requested to collect all the credentials (e.g. photocopy of National ID card) of their tenants before renting their houses when a deal is made via ForRent.com. ForRent.com and the team will not be responsible in case of any unpleasant situations.</p>
+
+<h2 id="5.4"> 5.4 Software Quality Attributes </h2>
+<p><b>Adaptability:</b> The main characteristic of ForRent.com is that it is a website and thus it can run on a wide variety of devices across many different platforms once it is up and running.</p>
+<p><b>Usability:</b> The design of the website is aimed to be intuitive so that users can get started as soon as they visit without having to adjust to any learning curves.</p>
+<p><b>Maintainability:</b> Developers with adequate knowledge of languages like HTML, CSS can easily go through and understand most of the code of the website. More adept developers with in-depth knowledge of SQL and PHP will be more familiar with the entire workings of the website.</p>
+
+<h2 id="5.5"> 5.5 Business Rules </h2>
+<p>ForRent.com is intended to connect house owners with potential tenants directly. Middlemen are discouraged from using the website for commercial purposes. Violators will be dealt with strictly.</p>
+<br><hr><br>
+
+<h1 id="appA"> Appendix A: Glossary </h1><br>
+ <ul>
+  <li><b>GET vs. POST method:</b> <a href="https://www.w3schools.com/TAgs/ref_httpmethods.asp">https://www.w3schools.com/TAgs/ref_httpmethods.asp</a></li>
+  <li><b>MVC Design Pattern:</b> <a href="https://en.wikipedia.org/wiki/Model-view-controller">https://en.wikipedia.org/wiki/Model-view-controller</a></li>
+  <li><b>CodeIgniter Framework:</b> <a href="https://codeigniter.com/">https://codeigniter.com/</a></li>
+ </ul>
+<br><hr><br>
+
+<h1 id="appB"> Appendix B: Analysis Models </h1><br>
+<!--- ER Diagram and MVC Flow chart -->
+<h2>MVC Interactions Flowchart:</h2>
+<center><img src="mvc.png" alt="MVC Interactions Flowchart" style="width:300px;height:330px;"></center>
+
+<h2>Simplified ER Diagram:</h2>
+<center><img src="simplifiedER.png" alt="Simplified ER Diagram" style="width:960px;height:480px;"></center>
+
+<h2>Complete ER Diagram:</h2>
+<center><img src="completeER.png" alt="Complete ER Diagram" style="width:1120px;height:630px;"></center>
+<br><hr><br>
+
+<h1>Thank You</h1>
+<center><a href="#top">Back to Table of Contents</a></center>
+<br><hr><br>
+</body>
+</html>

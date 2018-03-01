@@ -1,0 +1,13 @@
+/*!
+ * Start Bootstrap - Blog Home (http://startbootstrap.com/template-overviews/blog-home)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-blog-home/blob/master/LICENSE)
+ */
+
+body {
+    padding-top: 70px;  //Height of the Navbar
+}
+
+footer {
+    margin: 50px 0;
+}
