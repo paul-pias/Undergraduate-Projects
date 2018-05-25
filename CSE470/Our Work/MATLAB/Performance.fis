@@ -1,0 +1,166 @@
+[System]
+Name='Performance'
+Type='mamdani'
+Version=2.0
+NumInputs=10
+NumOutputs=1
+NumRules=50
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Number_of_Courses'
+Range=[1 6]
+NumMFs=3
+MF1='low':'trapmf',[1 1 2 2]
+MF2='Moderate':'trapmf',[2 2 3 4]
+MF3='High':'trapmf',[4 4 6 6]
+
+[Input2]
+Name='Number_of_Hours/day'
+Range=[0 8]
+NumMFs=5
+MF1='Very_Low':'trimf',[0 0.5 1.5]
+MF2='Low':'trimf',[1.5 2 2.5]
+MF3='Moderate':'trimf',[2.5 3 3.5]
+MF4='High':'trimf',[3.5 4 5]
+MF5='Very_High':'trimf',[5 6 8]
+
+[Input3]
+Name='Avg_GPA_of_last_3_semester'
+Range=[1 4]
+NumMFs=5
+MF1='VeryLow':'trimf',[1 1.5 1.99]
+MF2='Low':'trimf',[2 2.25 2.4]
+MF3='Average':'trimf',[2.4 2.7 2.99]
+MF4='High':'trimf',[3 3.25 3.5]
+MF5='VeryHigh':'trimf',[3.5 3.75 4]
+
+[Input4]
+Name='Teaching_Expectation'
+Range=[0 10]
+NumMFs=3
+MF1='Low':'trapmf',[0 1 2 4]
+MF2='Average':'trimf',[3 4.5 6]
+MF3='High':'trapmf',[5 6 8 10]
+
+[Input5]
+Name='Attendence'
+Range=[0.5 1]
+NumMFs=5
+MF1='VeryLow':'trimf',[0.5 0.55 0.6]
+MF2='Low':'trimf',[0.6 0.65 0.7]
+MF3='Average':'trimf',[0.65 0.7 0.75]
+MF4='High':'trimf',[0.7 0.75 0.8]
+MF5='VeryHigh':'trapmf',[0.8 0.9 0.95 1]
+
+[Input6]
+Name='Online_Assistance'
+Range=[0 10]
+NumMFs=3
+MF1='Unhelpful':'trimf',[0 1.5 3]
+MF2='Helpful':'trimf',[3 4 6]
+MF3='VeryHelpful':'trapmf',[5 7 8.5 10]
+
+[Input7]
+Name='Hours-of-Part-Time-Job/week'
+Range=[0 20]
+NumMFs=5
+MF1='Very_Low':'trapmf',[0 1.5 2.5 4]
+MF2='Low':'trapmf',[3 4.5 5.5 7]
+MF3='Average':'trapmf',[7 9.5 10.5 12]
+MF4='High':'trapmf',[12 13.5 14.5 16]
+MF5='VeryHigh':'trapmf',[15 17.5 18.5 20]
+
+[Input8]
+Name='Hours-in-Social-Media/Day'
+Range=[0 8]
+NumMFs=3
+MF1='Low':'trimf',[0 1.5 3]
+MF2='Average':'trapmf',[3 3.5 4.5 5]
+MF3='High':'trimf',[5 6.5 8]
+
+[Input9]
+Name='Depression_Level'
+Range=[0 5]
+NumMFs=3
+MF1='Low':'trapmf',[0 0.5 1 2]
+MF2='Average':'trimf',[2 2.5 3]
+MF3='High':'trapmf',[3 3.5 4 5]
+
+[Input10]
+Name='Competency-in-English'
+Range=[0 10]
+NumMFs=5
+MF1='VeryLow':'trimf',[0 1.5 3]
+MF2='Low':'trimf',[3 4 5]
+MF3='Moderate':'trimf',[5 5.8 6.5]
+MF4='High':'trimf',[6.5 7 7.5]
+MF5='VeryHigh':'trimf',[7.5 8.5 10]
+
+[Output1]
+Name='Performance'
+Range=[0 4]
+NumMFs=5
+MF1='VeryLow':'trimf',[0 1 1.99]
+MF2='Low':'trimf',[2 2.3 2.4]
+MF3='Moderate':'trimf',[2.41 2.75 2.99]
+MF4='High':'trimf',[3 3.3 3.5]
+MF5='VeryHigh':'trimf',[3.5 3.75 4]
+
+[Rules]
+1 2 2 2 3 2 1 1 1 3, 2 (1) : 1
+1 3 2 2 4 2 1 1 1 3, 3 (1) : 1
+1 4 3 2 4 3 1 1 1 3, 4 (1) : 1
+1 5 4 3 5 2 2 2 2 4, 4 (1) : 1
+1 1 5 3 4 3 3 2 1 5, 5 (1) : 1
+1 5 4 3 5 3 2 1 2 4, 5 (1) : 1
+1 3 3 1 3 0 3 2 2 3, 2 (1) : 1
+1 3 3 2 5 2 1 2 3 3, 3 (1) : 1
+1 4 4 2 4 3 1 2 2 3, 5 (1) : 1
+1 5 4 3 4 2 3 2 1 3, 5 (1) : 1
+2 2 2 2 3 2 1 1 1 3, 2 (1) : 1
+2 3 2 2 4 2 1 1 1 3, 3 (1) : 1
+2 4 3 2 4 3 1 1 1 3, 4 (1) : 1
+2 5 4 3 5 2 2 2 2 4, 4 (1) : 1
+2 1 5 3 4 3 3 2 1 5, 4 (1) : 1
+2 5 4 3 5 3 2 1 2 4, 5 (1) : 1
+2 3 3 1 3 0 3 2 2 3, 1 (1) : 1
+2 3 3 2 5 2 1 2 3 3, 3 (1) : 1
+2 4 4 2 4 3 1 2 2 3, 4 (1) : 1
+2 5 4 3 4 2 3 2 1 3, 5 (1) : 1
+3 2 2 2 3 2 1 1 1 3, 1 (1) : 1
+3 3 2 2 4 2 1 1 1 3, 2 (1) : 1
+3 4 3 2 4 3 1 1 1 3, 4 (1) : 1
+3 5 4 3 5 2 2 2 2 4, 4 (1) : 1
+3 1 5 3 4 3 3 2 1 5, 3 (1) : 1
+3 5 4 3 5 3 2 1 2 4, 5 (1) : 1
+3 3 3 1 3 0 3 2 2 3, 1 (1) : 1
+3 3 3 1 5 2 1 2 3 3, 2 (1) : 1
+3 4 4 2 4 3 1 2 2 3, 4 (1) : 1
+3 5 4 3 4 2 3 2 1 3, 5 (1) : 1
+3 2 1 1 1 2 4 2 2 3, 1 (1) : 1
+2 2 3 2 3 2 3 2 2 3, 2 (1) : 1
+3 2 2 3 5 2 2 2 2 3, 2 (1) : 1
+1 2 3 3 5 2 5 1 1 4, 3 (1) : 1
+3 2 1 2 3 2 2 2 2 3, 1 (1) : 1
+2 2 4 2 4 3 1 1 0 4, 4 (1) : 1
+3 2 3 3 5 2 2 2 2 3, 3 (1) : 1
+2 2 4 3 5 2 3 2 0 4, 4 (1) : 1
+1 2 4 2 4 3 2 2 2 5, 4 (1) : 1
+2 2 3 2 3 3 4 2 2 3, 3 (1) : 1
+3 3 1 1 1 2 4 2 2 3, 3 (1) : 1
+2 4 3 2 3 2 3 2 2 4, 3 (1) : 1
+3 4 2 3 5 2 2 2 2 3, 4 (1) : 1
+1 4 3 3 5 2 5 1 1 4, 5 (1) : 1
+3 4 1 2 4 2 2 2 2 3, 2 (1) : 1
+2 4 4 2 4 3 1 1 0 4, 5 (1) : 1
+3 4 3 3 5 2 2 2 2 3, 4 (1) : 1
+2 4 4 3 5 2 3 2 0 4, 5 (1) : 1
+1 4 4 2 4 3 2 2 2 5, 5 (1) : 1
+2 4 2 2 3 3 4 2 2 3, 3 (1) : 1
+3 4 2 1 1 2 4 2 2 3, 2 (1) : 1
+
