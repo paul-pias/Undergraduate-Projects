@@ -1,0 +1,12 @@
+Nazmul Hasan
+1330824642
+
+Language Used: C++
+
+Instructions:
+1. compile the code using cmd
+2. run the executable file sending the required parameter
+
+parameter: training_file test_file k
+
+please note: all the instructions are case sensitive
