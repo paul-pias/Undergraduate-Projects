@@ -1,1 +1,1 @@
-nsu.fall.2017.cse327.1.team6
+ Area based Rental website constructed using Codeigniter framework.
